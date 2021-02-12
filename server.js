@@ -1,27 +1,30 @@
-// *********************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-// *********************************************************************************
+// Requiring necessary npm packages
+var express = require("express");
+var session = require("express-session");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
-// Dependencies
-// =============================================================
-const express = require('express');
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3300;
+var db = require("./models");
 
-// Sets up the Express App
-// =============================================================
-const app = express();
-const PORT = process.env.PORT || 3300;
-
-// Sets up the Express app to handle data parsing
+// Creating express app and configuring middleware needed for authentication
+var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Static directory to be served
-app.use(express.static('app/public'));
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
-// Routes
-// =============================================================
-require('./app/routes/api-routes.js')(app);
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
+});
