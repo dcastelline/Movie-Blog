@@ -1,10 +1,9 @@
 var unirest = require("unirest");
 
-var req = unirest("GET", "https://ott-details.p.rapidapi.com/search");
+var req = unirest("GET", "https://ott-details.p.rapidapi.com/getPlatforms");
 
 req.query({
-	"title": "Endgame",
-	"page": "1"
+	"region": "US"
 });
 
 req.headers({
