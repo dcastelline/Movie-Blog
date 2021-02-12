@@ -25,3 +25,14 @@ footer {
 a:any-link {
     color: black;
 }
+#streaming-services {
+    filter: brightness(50%);
+    height: 500px;
+}
+#streaming-remote {
+    height: 500px;
+    filter: brightness(50%);
+}
+#watching-netflix {
+    height: 500px;
+}
