@@ -1,13 +1,16 @@
 h4 {
     font-family: 'Roboto Slab', serif;
 }
+p {
+    font-family: 'Roboto Mono, monospace';
+}
 #movie-header {
     font-family: 'Roboto Mono, monospace';
     font-size: 28px;
 }
-#comments-section {
+.user-comment {
     font-family: 'Roboto Mono, monospace';
-    font-size: 18px;
+    font-size: 16px;
 }
 #poster {
     margin-bottom: 24px;
@@ -46,4 +49,25 @@ a:any-link {
 #poster {
     height: auto;
     width: auto;
+}
+#search-movie {
+    text-align: center;
+}
+.bi-star {
+   float: right 
+}
+.input-area {
+    margin-top: 20px;
+}
+.btn {
+    margin-top: 16px;
+}
+.comments-header {
+    text-decoration: underline;
+    font-family: 'Roboto Slab', serif;
+}
+.user-name {
+    font-size: 20px;
+    font-family: 'Roboto Slab, serif';
+    font-weight: 800;
 }
