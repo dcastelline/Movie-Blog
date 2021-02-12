@@ -10,7 +10,7 @@ h4 {
     font-size: 18px;
 }
 #poster {
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
 .search-cat {
     font-size: 18px;
@@ -25,14 +25,25 @@ footer {
 a:any-link {
     color: black;
 }
+#watching-netflix {
+    filter: brightness(50%);
+    height: fit-content;
+    max-height: 500px;
+    width: fit-content;
+}
 #streaming-services {
     filter: brightness(50%);
-    height: 500px;
+    height: fit-content;
+    max-height: 500px;
+    width: fit-content;
 }
 #streaming-remote {
-    height: 500px;
     filter: brightness(50%);
+    height: fit-content;
+    max-height: 500px;
+    width: fit-content;
 }
-#watching-netflix {
-    height: 500px;
+#poster {
+    height: auto;
+    width: auto;
 }
