@@ -1,0 +1,27 @@
+h4 {
+    font-family: 'Roboto Slab', serif;
+}
+#movie-header {
+    font-family: 'Roboto Mono, monospace';
+    font-size: 28px;
+}
+#comments-section {
+    font-family: 'Roboto Mono, monospace';
+    font-size: 18px;
+}
+#poster {
+    margin-bottom: 18px;
+}
+.search-cat {
+    font-size: 18px;
+}
+footer {
+    text-align: center;
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+    background-color: rgb(235, 235, 235);
+}
+a:any-link {
+    color: black;
+}
