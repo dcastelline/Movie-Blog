@@ -31,19 +31,19 @@ a:any-link {
 #watching-netflix {
     filter: brightness(50%);
     height: fit-content;
-    max-height: 500px;
+    max-height: 560px;
     width: fit-content;
 }
 #streaming-services {
     filter: brightness(50%);
     height: fit-content;
-    max-height: 500px;
+    max-height: 560px;
     width: fit-content;
 }
 #streaming-remote {
     filter: brightness(50%);
     height: fit-content;
-    max-height: 500px;
+    max-height: 560px;
     width: fit-content;
 }
 #poster {
@@ -70,4 +70,28 @@ a:any-link {
     font-size: 20px;
     font-family: 'Roboto Slab, serif';
     font-weight: 800;
+}
+#google-icon {
+    margin-top: 100px;
+}
+#please-login {
+    text-align: center;
+}
+.text-muted {
+    text-align: center;
+}
+#inputEmail {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+#inputPassword {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+#loginBtn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
 }
