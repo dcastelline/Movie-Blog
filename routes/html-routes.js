@@ -6,12 +6,11 @@ module.exports = (app) => {
 
   // index route loads login.html
   app.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '../views/login.html'))
-  );
-
-  // index route loads index.html
-  app.get('/index', (req, res) =>
     res.sendFile(path.join(__dirname, '../views/index.html'))
   );
 
+  // index route loads index.html
+  app.get('/login', (req, res) =>
+    res.sendFile(path.join(__dirname, '../views/login.html'))
+  );
 };
