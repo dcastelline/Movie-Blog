@@ -59,21 +59,31 @@ searchBtn.on('click', () => {
         let numOfSearches = parseInt(numberOfSearches.val());
         if (numOfSearches === 1){
             firstSearch.show();
+            secondSearch.hide();
+            thirdSearch.hide();
+            fourthSearch.hide();
+            fifthSearch.hide();
         }
         else if (numOfSearches === 2){
             firstSearch.show();
             secondSearch.show();
+            thirdSearch.hide();
+            fourthSearch.hide();
+            fifthSearch.hide();
         }
         else if (numOfSearches === 3){
             firstSearch.show();
             secondSearch.show();
             thirdSearch.show();
+            fourthSearch.hide();
+            fifthSearch.hide();
         }
         else if (numOfSearches === 4){
             firstSearch.show();
             secondSearch.show();
             thirdSearch.show();
             fourthSearch.show();
+            fifthSearch.hide();
         }
         else if (numOfSearches === 5){
             firstSearch.show();
