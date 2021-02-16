@@ -21,7 +21,7 @@ const thirdMovieTitle = $("#movieTitle3");
 const fourthMovieTitle = $("#movieTitle4");
 const fifthMovieTitle = $("#movieTitle1");
 
-const firstPoster = $('#poster');
+const firstPoster = $('#first-poster');
 
 const firstSynopsis = $("#synopsis1");
 const secondSynopsis = $("#synopsis2");
