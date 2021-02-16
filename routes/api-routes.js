@@ -5,15 +5,15 @@ async function getMovie() {
 		"headers": {
 			"x-rapidapi-key": "bc1026b9b5msh09f9bd72ecaf669p16f9e1jsn203e48375d38",
 			"x-rapidapi-host": "ott-details.p.rapidapi.com"
-		}
-	})
-		.then(response => response.json())
-		.then(response => {
-			console.log(response);
-		})
-		.catch(err => {
-			console.error(err);
-		});
+    }
+  })
+  .then(response => response.json())
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
 }
 // platform information
 async function getPlatform() {
@@ -24,12 +24,12 @@ async function getPlatform() {
 			"x-rapidapi-host": "ott-details.p.rapidapi.com"
 		}
 	})
-		.then(response => {
-			console.log(response);
-		})
-		.catch(err => {
-			console.error(err);
-		});
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
 }
 
 
