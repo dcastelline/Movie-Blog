@@ -21,23 +21,25 @@ const thirdMovieTitle = $("#movieTitle3");
 const fourthMovieTitle = $("#movieTitle4");
 const fifthMovieTitle = $("#movieTitle1");
 
+const firstPoster = $('#first-poster');
+
 const firstSynopsis = $("#synopsis1");
 const secondSynopsis = $("#synopsis2");
 const thirdSynopsis = $("#synopsis3");
 const fourthSynopsis = $("#synopsis4");
 const fifthSynopsis = $("#synopsis5");
 
-const firstReleaseYear = $("year1");
-const secondReleaseYear = $("year2");
-const thirdReleaseYear = $("year3");
-const fourthReleaseYear = $("year4");
-const fifthReleaseYear = $("year5");
+const firstReleaseYear = $("#year1");
+const secondReleaseYear = $("#year2");
+const thirdReleaseYear = $("#year3");
+const fourthReleaseYear = $("#year4");
+const fifthReleaseYear = $("#year5");
 
-const firstStreamServ = $("streaming1");
-const secondStreamServ = $("streaming2");
-const thirdStreamServ = $("streaming3");
-const fourthStreamServ = $("streaming4");
-const fifthStreamServ = $("streaming5");
+const firstStreamServ = $("#streaming1");
+const secondStreamServ = $("#streaming2");
+const thirdStreamServ = $("#streaming3");
+const fourthStreamServ = $("#streaming4");
+const fifthStreamServ = $("#streaming5");
 // End of Destination Elements for API responses
 
 // Hides the Movie section results of the page
@@ -94,3 +96,24 @@ searchBtn.on('click', () => {
         }
     }
 });
+
+searchBtn.on('click', async function getMovie() {
+        await fetch("https://ott-details.p.rapidapi.com/search?title=" + movieInput.val() + "&page=1", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "bc1026b9b5msh09f9bd72ecaf669p16f9e1jsn203e48375d38",
+                "x-rapidapi-host": "ott-details.p.rapidapi.com"
+            }
+        })
+            .then(response => response.json())
+            .then(response => {
+                firstMovieTitle.text(response.results[0].title);
+                firstSynopsis.text(response.results[0].synopsis);
+                firstReleaseYear.text(response.results[0].released);
+                firstPoster.attr('src', response.results[0].imageurl[0])
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }
+)
