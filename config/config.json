@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": null,
+      "password": "CastleSQL32!@",
       "database": "movie_watch_list",
       "host": "127.0.0.1",
       "dialect": "mysql"
