@@ -11,7 +11,15 @@ module.exports = (app) => {
   );
 
   // index route loads index.html
-  app.get('/login', (req, res) =>
-    res.sendFile(path.join(__dirname, '../views/login.html'))
+  app.get('/login', (req, res) => {
+    if (req.user) {
+      res.redirect("/");
+    }
+    res.sendFile(path.join(__dirname, "../views/login.html"));
+  }
   );
+
+  app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/signup.html"));
+  })
 };

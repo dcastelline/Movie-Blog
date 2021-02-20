@@ -4,7 +4,9 @@ const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const htmlRoutes = require("./routes/html-routes.js");
-const apiRoutes = require("./routes/api-routes.js");
+const commentAPIRoutes = require("./routes/comment-api-routes.js");
+const userAPIRoutes = require('./routes/user-api-routes.js');
+const movieAPIRoutes = require('./routes/movie-list-routes.js');
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 3300;
@@ -22,6 +24,9 @@ app.use(passport.session());
 
 // Requiring our routes
 htmlRoutes(app);
+commentAPIRoutes(app);
+userAPIRoutes(app);
+movieAPIRoutes(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
