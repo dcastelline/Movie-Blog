@@ -1,29 +1,30 @@
 const db = require("../models");
 const axios = require('axios');
-const { response } = require("express");
 
 function search (body) {
-  axios.get("https://ott-details.p.rapidapi.com/search?title=" + body + "&page=1", {
+  return axios.get("https://ott-details.p.rapidapi.com/search?title=" + body + "&page=1", {
     headers: {
       "x-rapidapi-key": process.env.RAPID_APIKEY,
       "x-rapidapi-host": "ott-details.p.rapidapi.com"
     }
-  }).then(response => { console.log(response) })
+  }).then(response => { return response.data })
   .catch(err => console.log(err));
   
 }
 
 module.exports = {
-  find: function(req, res) {
+  find: async function(req, res) {
     // find comments with matching movie key
-    search();
+    const movie = await search(req.params.search);
     
-    db.comment
-      .findAll({
-        attributes: [req.params.movieID, 'movieID']
-      })
-      .then(comments => res.json(comments))
-      .catch(err => res.status(400).json(err));
+    res.json(movie);
+    
+    // db.comment
+    //   .findAll({
+    //     attributes: [req.params.movieID, 'movieID']
+    //   })
+    //   .then(comments => res.json(comments))
+    //   .catch(err => res.status(400).json(err));
   },
   create: function(req, res) {
     // create new comment
