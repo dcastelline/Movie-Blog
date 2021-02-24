@@ -1,8 +1,9 @@
 // Requiring necessary npm packages
 const express = require("express");
-const session = require("express-session");
+const controller = require("./controllers/controller.js");
+// const session = require("express-session");
 
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3000;
 
 // import { v4 as uuidv4 } from 'uuid';
 
@@ -16,11 +17,10 @@ const db = require("./models");
 const app = express();
 
 // Serve static content
-app.use(express.static('public'));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname));
+
+app.use(express.static('public'));
 
 // We need to use sessions to keep track of our user's login status
 // app.use(session({
@@ -35,7 +35,7 @@ app.use(express.static(__dirname));
 // app.use(passport.session());
 
 // Requiring our routes
-require('./controllers/controller.js')(app);
+app.use(controller);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
