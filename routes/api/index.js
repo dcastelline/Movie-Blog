@@ -4,7 +4,10 @@ require('dotenv').config();
 
 router
   .route("/:search")
-  .get(controller.find)
+  .get(controller.find);
+
+router
+  .route("/comments")
   .post(controller.create);
 
 module.exports = router;
