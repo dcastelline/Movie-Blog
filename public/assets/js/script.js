@@ -1,6 +1,126 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM content loaded!');
 
+<<<<<<< HEAD
+// Each Movie section in the main page, encompassed in one HTML element
+const firstSearch = $('#search-results-one');
+const secondSearch = $('#search-results-two');
+const thirdSearch = $('#search-results-three');
+const fourthSearch = $('#search-results-four');
+const fifthSearch = $('#search-results-five');
+
+// Leftover variables from other search criteria
+// const directorInput = $('#directorInput');
+// const actorInput = $('#actorInput');
+
+// Destination Elements in the HTML for the API responses
+const firstMovieTitle = $("#movieTitle1");
+const secondMovieTitle = $("#movieTitle2");
+const thirdMovieTitle = $("#movieTitle3");
+const fourthMovieTitle = $("#movieTitle4");
+const fifthMovieTitle = $("#movieTitle1");
+
+const firstPoster = $('#first-poster');
+
+const firstSynopsis = $("#synopsis1");
+const secondSynopsis = $("#synopsis2");
+const thirdSynopsis = $("#synopsis3");
+const fourthSynopsis = $("#synopsis4");
+const fifthSynopsis = $("#synopsis5");
+
+const firstReleaseYear = $("#year1");
+const secondReleaseYear = $("#year2");
+const thirdReleaseYear = $("#year3");
+const fourthReleaseYear = $("#year4");
+const fifthReleaseYear = $("#year5");
+
+const firstStreamServ = $("#streaming1");
+const secondStreamServ = $("#streaming2");
+const thirdStreamServ = $("#streaming3");
+const fourthStreamServ = $("#streaming4");
+const fifthStreamServ = $("#streaming5");
+// End of Destination Elements for API responses
+
+// Hides the Movie section results of the page
+firstSearch.hide();
+secondSearch.hide();
+thirdSearch.hide();
+fourthSearch.hide();
+fifthSearch.hide();
+
+// Displays the Search Results section upon searching for a Movie Title
+searchBtn.on('click', async function getMovie() {
+  if (movieInput.val() == "") {
+    alertInput.text("Please input at a movie title.");
+  }
+  else {
+    alertInput.hide();
+
+    // numOfSearches gives us the amount of searches the user wants to make in interger form
+    let numOfSearches = parseInt(numberOfSearches.val());
+    if (numOfSearches === 1) {
+      firstSearch.show();
+      secondSearch.hide();
+      thirdSearch.hide();
+      fourthSearch.hide();
+      fifthSearch.hide();
+    }
+    else if (numOfSearches === 2) {
+      firstSearch.show();
+      secondSearch.show();
+      thirdSearch.hide();
+      fourthSearch.hide();
+      fifthSearch.hide();
+    }
+    else if (numOfSearches === 3) {
+      firstSearch.show();
+      secondSearch.show();
+      thirdSearch.show();
+      fourthSearch.hide();
+      fifthSearch.hide();
+    }
+    else if (numOfSearches === 4) {
+      firstSearch.show();
+      secondSearch.show();
+      thirdSearch.show();
+      fourthSearch.show();
+      fifthSearch.hide();
+    }
+    else if (numOfSearches === 5) {
+      firstSearch.show();
+      secondSearch.show();
+      thirdSearch.show();
+      fourthSearch.show();
+      fifthSearch.show();
+    }
+  }
+
+  $.ajax(`/api/${movieInput.val()}`, {
+    type: 'GET'
+  }).then(function() {
+    
+  })
+
+  await fetch("https://ott-details.p.rapidapi.com/search?title=" + movieInput.val() + "&page=1", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "bc1026b9b5msh09f9bd72ecaf669p16f9e1jsn203e48375d38",
+      "x-rapidapi-host": "ott-details.p.rapidapi.com"
+    }
+  })
+    .then(response => response.json())
+    .then(response => {
+      firstMovieTitle.text(response.results[0].title);
+      firstSynopsis.text(response.results[0].synopsis);
+      firstReleaseYear.text(response.results[0].released);
+      firstPoster.attr('src', response.results[0].imageurl[0])
+    })
+    .catch(err => {
+      console.error(err);
+    });
+}
+)
+=======
     const searchBtn = $('#search-button');
     const movieInput = $('#movieInput');
     const alertInput = $('#alertInput');
@@ -97,3 +217,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     )
 });
+>>>>>>> 7b7bd62e0d75c3eb1c17e385657559e7990d841f

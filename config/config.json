@@ -1,4 +1,17 @@
 {
+<<<<<<< HEAD
+  "development": {
+    "username": "root",
+    "password": "hjkl;fs607689GK",
+    "database": "movie_project_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+=======
     "development": {
       "username": "root",
       "password": "mh3_Ren!",
@@ -20,4 +33,5 @@
       "host": "127.0.0.1",
       "dialect": "mysql"
     }
+>>>>>>> 7b7bd62e0d75c3eb1c17e385657559e7990d841f
 }
