@@ -31,5 +31,3 @@ async function getPlatform() {
 			console.error(err);
 		});
 }
-
-
