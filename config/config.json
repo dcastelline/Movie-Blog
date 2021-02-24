@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "development": {
     "username": "root",
     "password": "hjkl;fs607689GK",
@@ -10,4 +11,27 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
+=======
+    "development": {
+      "username": "root",
+      "password": "mh3_Ren!",
+      "database": "movie_watch_list",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "database_test",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "database_production",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+>>>>>>> 7b7bd62e0d75c3eb1c17e385657559e7990d841f
 }

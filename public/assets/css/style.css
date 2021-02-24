@@ -50,10 +50,11 @@ a:any-link {
     max-height: 600px;
     width: fit-content;
 }
-#poster {
+#first-poster {
     height: auto;
     width: auto;
 }
+
 #search-movie {
     text-align: center;
 }
@@ -95,7 +96,8 @@ a:any-link {
     margin-right: auto;
     width: 30%;
 }
-#loginBtn {
+#loginBtn,
+#signUpBtn {
     margin-left: auto;
     margin-right: auto;
     width: 30%;

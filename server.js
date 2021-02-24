@@ -1,8 +1,8 @@
 // Requiring necessary npm packages
 const express = require("express");
 const routes = require("./routes");
-
 const PORT = process.env.PORT || 3000;
+
 
 // Setting up port and requiring models for syncing
 const db = require("./models");
