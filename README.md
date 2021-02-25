@@ -40,9 +40,9 @@
     SOFTWARE.
     
   ## Collaborators
-  Angel - https://github.com/AngelCooper
-  Carlos - https://github.com/charliecan2
-  Cole - https://github.com/ColeBallard
+  Angel - https://github.com/AngelCooper<br>
+  Carlos - https://github.com/charliecan2<br>
+  Cole - https://github.com/ColeBallard<br>
   Daniel - https://github.com/dcastelline
 
   ## Questions
