@@ -15,20 +15,23 @@ function search (body) {
 module.exports = {
   find: async function(req, res) {
     // find comments with matching movie key
-    const movie = await search(req.params.search);
-    
-    res.json(movie);
-    
-    // db.comment
-    //   .findAll({
-    //     attributes: [req.params.movieID, 'movieID']
-    //   })
-    //   .then(comments => res.json(comments))
-    //   .catch(err => res.status(400).json(err));
+    const data = await search(req.params.search);
+
+    if (!data) return;
+
+    for (let i = 0; i <= (data.results.length - 1); i++) {
+      data.results[i].comments = await db.Comment.findAll({
+          where: {
+            movieId: data.results[i].imdbid
+          }
+        });
+    }
+
+    res.json(data);
   },
   create: function(req, res) {
     // create new comment
-    db.comment 
+    db.Comment 
       .create({
         body: req.params.body,
         movieID: req.params.movieID

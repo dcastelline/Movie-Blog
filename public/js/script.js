@@ -10,24 +10,6 @@ $(document).ready(function() {
   // const directorInput = $('#directorInput');
   // const actorInput = $('#actorInput');
 
-  async function getPlatform(cb) {
-    await fetch("https://ott-details.p.rapidapi.com/getPlatforms?region=IN", {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": "bc1026b9b5msh09f9bd72ecaf669p16f9e1jsn203e48375d38",
-        "x-rapidapi-host": "ott-details.p.rapidapi.com"
-      }
-    })
-      .then(response => {
-        console.log(response);
-        cb(response);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-
-  }
-
   // Displays the Search Results section upon searching for a Movie Title
 
   searchBtn.on('click', async function getMovie() {
@@ -38,8 +20,6 @@ $(document).ready(function() {
       $.ajax(`/api/${movieInput.val()}`, {
         type: 'GET'
       }).then(function (data) {
-        console.log(data);
-        
         searchResults.empty();
         for (i = 0; i < data.results.length; i++) {
           searchResults.append(`<hr>
@@ -79,7 +59,7 @@ $(document).ready(function() {
                       </div>
                       <br>`)
         }
-      }).catch(err => console.log(err));
+      }).catch(err => console.log('sheesh'));
 
       alertInput.empty();
      
