@@ -12,6 +12,38 @@ $(document).ready(function() {
 
   // Displays the Search Results section upon searching for a Movie Title
 
+  searchBtn.on('click', async function getInfo() {
+    //fetch for netflix
+    await fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&language=en" + movieInput.val(), {
+     "method": "GET",
+     "headers": {
+       "x-rapidapi-key": "bc1026b9b5msh09f9bd72ecaf669p16f9e1jsn203e48375d38",
+       "x-rapidapi-host": "streaming-availability.p.rapidapi.com"
+     }
+   })
+     .then(response => {
+       console.log(response);
+     })
+     .catch(err => {
+       console.error(err);
+     })
+
+   //fetch for hulu
+   await fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=hulu&type=movie&genre=18&page=1&language=en" + movieInput.val(), {
+     "method": "GET",
+     "headers": {
+       "x-rapidapi-key": "bc1026b9b5msh09f9bd72ecaf669p16f9e1jsn203e48375d38",
+       "x-rapidapi-host": "streaming-availability.p.rapidapi.com"
+     }
+   })
+     .then(response => {
+       console.log(response);
+     })
+     .catch(err => {
+       console.error(err);
+     })
+ })
+
   searchBtn.on('click', async function () {
     if (movieInput.val() == "") {
       alertInput.text("Please input at a movie title.");
