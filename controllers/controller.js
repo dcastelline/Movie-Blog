@@ -1,5 +1,6 @@
 const db = require("../models");
 const axios = require('axios');
+const { Sequelize } = require('sequelize');
 
 function search (body) {
   return axios.get("https://ott-details.p.rapidapi.com/search?title=" + body + "&page=1", {
@@ -29,14 +30,16 @@ module.exports = {
 
     res.json(data);
   },
-  create: function(req, res) {
+  create: async function(req, res) {
     // create new comment
-    db.Comment 
+    await db.Comment 
       .create({
-        body: req.params.body,
-        movieID: req.params.movieID
-      })
-      .then(comment => res.json(comment))
-      .catch(err => res.status(400).json(err));
+        body: req.body.body,
+        movieId: req.body.movieId,
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP')
+      });
+
+      res.json(req.body);
   }
 };
