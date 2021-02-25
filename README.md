@@ -1,7 +1,8 @@
 # Movie Blog
-
-# Note-Taker
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+  ## Deployed
+  https://basic-movie-blog.herokuapp.com/
 
   ## Description
   Movie Blog was created to help users find shows and movies to watch and determine whether or not they are streaming on Netflix or Hulu.  The application also allows users to leave comments attached to the movies to help others make their viewing decisions.
